@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dboc5ps4j8nyq"
-path.s3tc="res://.godot/imported/torso_baseColor.png-7c074b04cdfdb6227e4fd66a24596b1b.s3tc.ctex"
-path.etc2="res://.godot/imported/torso_baseColor.png-7c074b04cdfdb6227e4fd66a24596b1b.etc2.ctex"
+uid="uid://b8pnehb8n3vxe"
+path.s3tc="res://.godot/imported/material_baseColor.png-7b4a724a9062097e469e0e7ccaf6ab84.s3tc.ctex"
+path.etc2="res://.godot/imported/material_baseColor.png-7b4a724a9062097e469e0e7ccaf6ab84.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/torso_baseColor.png"
-dest_files=["res://.godot/imported/torso_baseColor.png-7c074b04cdfdb6227e4fd66a24596b1b.s3tc.ctex", "res://.godot/imported/torso_baseColor.png-7c074b04cdfdb6227e4fd66a24596b1b.etc2.ctex"]
+source_file="res://models/garfield/textures/material_baseColor.png"
+dest_files=["res://.godot/imported/material_baseColor.png-7b4a724a9062097e469e0e7ccaf6ab84.s3tc.ctex", "res://.godot/imported/material_baseColor.png-7b4a724a9062097e469e0e7ccaf6ab84.etc2.ctex"]
 
 [params]
 

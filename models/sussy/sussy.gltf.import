@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dblklqoikooc0"
-path="res://.godot/imported/scene.gltf-6fed95f62403ae9d9dbaff08702dc109.scn"
+uid="uid://b1jy3exe3sqks"
+path="res://.godot/imported/sussy.gltf-6852f74b5e4ee7c76c438f8fc1395052.scn"
 
 [deps]
 
-source_file="res://scene.gltf"
-dest_files=["res://.godot/imported/scene.gltf-6fed95f62403ae9d9dbaff08702dc109.scn"]
+source_file="res://models/sussy/sussy.gltf"
+dest_files=["res://.godot/imported/sussy.gltf-6852f74b5e4ee7c76c438f8fc1395052.scn"]
 
 [params]
 

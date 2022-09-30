@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpg0h784nadv1"
-path.s3tc="res://.godot/imported/head_baseColor.png-977b34929820e4065431181a7bf740d2.s3tc.ctex"
-path.etc2="res://.godot/imported/head_baseColor.png-977b34929820e4065431181a7bf740d2.etc2.ctex"
+uid="uid://dhqheqtuk75ma"
+path.s3tc="res://.godot/imported/head_baseColor.png-72a1dcf42906a71892add14874fa6842.s3tc.ctex"
+path.etc2="res://.godot/imported/head_baseColor.png-72a1dcf42906a71892add14874fa6842.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/head_baseColor.png"
-dest_files=["res://.godot/imported/head_baseColor.png-977b34929820e4065431181a7bf740d2.s3tc.ctex", "res://.godot/imported/head_baseColor.png-977b34929820e4065431181a7bf740d2.etc2.ctex"]
+source_file="res://models/garfield/textures/head_baseColor.png"
+dest_files=["res://.godot/imported/head_baseColor.png-72a1dcf42906a71892add14874fa6842.s3tc.ctex", "res://.godot/imported/head_baseColor.png-72a1dcf42906a71892add14874fa6842.etc2.ctex"]
 
 [params]
 
