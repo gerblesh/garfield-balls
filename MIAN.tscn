@@ -1,23 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dj2n8v21gdh6h"]
+[gd_scene load_steps=9 format=3 uid="uid://dj2n8v21gdh6h"]
 
-[ext_resource type="Script" path="res://RigidBody3d.gd" id="1_f5j44"]
-[ext_resource type="Shader" path="res://materials/ball.gdshader" id="2_8cq6v"]
+[ext_resource type="PackedScene" uid="uid://be3yelf41o4od" path="res://ball.tscn" id="1_8rvh4"]
 [ext_resource type="Texture2D" uid="uid://d3w4qqsvaf4u1" path="res://icon.svg" id="3_2314g"]
-[ext_resource type="PackedScene" uid="uid://b37baohmumfgb" path="res://models/garfield/scene.gltf" id="3_iafrb"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yrgnu"]
-render_priority = 0
-shader = ExtResource("2_8cq6v")
-shader_parameter/blur_amount = 2.0
-shader_parameter/rim_color = Color(1, 0.313726, 0.313726, 1)
-shader_parameter/rim_width = 0.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_cw8bp"]
-radius = 2.0
-height = 4.0
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_4kt2c"]
-radius = 2.0
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3h60y"]
 
@@ -44,35 +28,7 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Garf" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.910351, 0)
-collision_mask = 2
-linear_damp = 1.5
-angular_damp = 1.5
-script = ExtResource("1_f5j44")
-
-[node name="MeshInstance3d" type="MeshInstance3D" parent="Garf"]
-material_override = SubResource("ShaderMaterial_yrgnu")
-mesh = SubResource("SphereMesh_cw8bp")
-
-[node name="scene" parent="Garf" instance=ExtResource("3_iafrb")]
-transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -1.2777, -0.359273)
-
-[node name="CollisionShape3d" type="CollisionShape3D" parent="Garf"]
-shape = SubResource("SphereShape3D_4kt2c")
-
-[node name="xPivot" type="Node3D" parent="Garf"]
-
-[node name="yPivot" type="Node3D" parent="Garf/xPivot"]
-
-[node name="SpringArm3d" type="SpringArm3D" parent="Garf/xPivot/yPivot"]
-collision_mask = 2
-spring_length = 10.0
-
-[node name="Camera3d" type="Camera3D" parent="Garf/xPivot/yPivot/SpringArm3d"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100273, -0.193759, 0.0607338)
-current = true
-fov = 90.0
+[node name="Ball" parent="." instance=ExtResource("1_8rvh4")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_oer4l")

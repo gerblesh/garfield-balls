@@ -3,27 +3,27 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bnpr25kwlul5"
-path="res://.godot/imported/scene.gltf-cff626bd614edbbe44de2284c8bd471b.scn"
+uid="uid://npsq3y3qejuf"
+path="res://.godot/imported/andrew_garfield.gltf-5a833e14410404e0c1d79d830d419a0b.scn"
 
 [deps]
 
-source_file="res://models/garfield/scene.gltf"
-dest_files=["res://.godot/imported/scene.gltf-cff626bd614edbbe44de2284c8bd471b.scn"]
+source_file="res://models/andrew/andrew_garfield.gltf"
+dest_files=["res://.godot/imported/andrew_garfield.gltf-5a833e14410404e0c1d79d830d419a0b.scn"]
 
 [params]
 
 nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
-nodes/root_scale=0.01
+nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
 meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
 skins/use_named_skins=true
-animation/import=false
+animation/import=true
 animation/fps=30
 import_script/path=""
 _subresources={}

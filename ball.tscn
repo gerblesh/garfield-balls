@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://be3yelf41o4od"]
+
+[ext_resource type="Script" path="res://RigidBody3d.gd" id="1_mc0bo"]
+[ext_resource type="Shader" path="res://materials/ball.gdshader" id="2_38sff"]
+[ext_resource type="Script" path="res://model.gd" id="3_upr70"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eekrj"]
+friction = 0.89
+bounce = 0.6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yrgnu"]
+render_priority = 0
+shader = ExtResource("2_38sff")
+shader_parameter/blur_amount = 2.0
+shader_parameter/rim_color = Color(1, 0.313726, 0.313726, 1)
+shader_parameter/rim_width = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_cw8bp"]
+radius = 2.0
+height = 4.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4kt2c"]
+radius = 2.0
+
+[node name="Ball" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.910351, 0)
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_eekrj")
+linear_damp = 1.5
+angular_damp = 1.5
+script = ExtResource("1_mc0bo")
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_yrgnu")
+mesh = SubResource("SphereMesh_cw8bp")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_4kt2c")
+
+[node name="xPivot" type="Node3D" parent="."]
+
+[node name="yPivot" type="Node3D" parent="xPivot"]
+
+[node name="SpringArm3d" type="SpringArm3D" parent="xPivot/yPivot"]
+collision_mask = 2
+spring_length = 10.0
+
+[node name="Camera3d" type="Camera3D" parent="xPivot/yPivot/SpringArm3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100273, -0.193759, 0.0607338)
+current = true
+fov = 90.0
+
+[node name="model" type="Node3D" parent="."]
+script = ExtResource("3_upr70")
