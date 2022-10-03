@@ -1,14 +1,14 @@
 extends Node3D
 var models: Array[PackedScene] = [
 	preload("res://models/garfield/garf.tscn"),
-	preload("res://models/andrew/andrew_garfield.gltf")
+	preload("res://models/andrew/andrew.tscn")
 ]
 
 var current_character: Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	set_character(0)
+	set_character(1)
 	pass # Replace with function body.
 
 func set_character(i: int):
