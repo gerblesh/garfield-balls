@@ -8,8 +8,7 @@ var current_character: Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	set_character(1)
-	pass # Replace with function body.
+	set_character(0)
 
 func set_character(i: int):
 	if is_instance_valid(current_character):
@@ -17,6 +16,9 @@ func set_character(i: int):
 	current_character = models[i].instantiate()
 	add_child(current_character)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("char1"):
+		set_character(0)
+	if Input.is_action_just_pressed("char2"):
+		set_character(1)
+	

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dj2n8v21gdh6h"]
 
-[ext_resource type="PackedScene" uid="uid://be3yelf41o4od" path="res://ball.tscn" id="1_8rvh4"]
+[ext_resource type="PackedScene" uid="uid://dikhx714e3jyx" path="res://ball.tscn" id="1_8rvh4"]
 [ext_resource type="Texture2D" uid="uid://d3w4qqsvaf4u1" path="res://icon.svg" id="3_2314g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3h60y"]
@@ -29,6 +29,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="Ball" parent="." instance=ExtResource("1_8rvh4")]
+max_contacts_reported = 4
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_oer4l")

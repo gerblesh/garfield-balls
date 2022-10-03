@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://be3yelf41o4od"]
+[gd_scene load_steps=8 format=3 uid="uid://dikhx714e3jyx"]
 
-[ext_resource type="Script" path="res://RigidBody3d.gd" id="1_mc0bo"]
+[ext_resource type="Script" path="res://ball.gd" id="1_mc0bo"]
 [ext_resource type="Shader" path="res://materials/ball.gdshader" id="2_38sff"]
 [ext_resource type="Script" path="res://model.gd" id="3_upr70"]
 
@@ -50,5 +50,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100273, -0.193759, 0.06073
 current = true
 fov = 90.0
 
-[node name="model" type="Node3D" parent="."]
+[node name="Model" type="Node3D" parent="."]
 script = ExtResource("3_upr70")
