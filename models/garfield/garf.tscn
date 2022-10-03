@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcx48qpn3kmb"]
+
+[ext_resource type="PackedScene" uid="uid://bnpr25kwlul5" path="res://models/garfield/scene.gltf" id="1_fgjh4"]
+
+[node name="scene" instance=ExtResource("1_fgjh4")]
+transform = Transform3D(1.31277, 0, 0, 0, 1.31277, 0, 0, 0, 1.31277, 0, -0.890715, -0.377636)
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(1.0409, 0, 0, 0, 2.31127e-16, 1.0409, 0, -1.0409, 2.31127e-16, 0, 0, 0)

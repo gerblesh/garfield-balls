@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvp71hsqwcni4"]
+
+[ext_resource type="PackedScene" uid="uid://npsq3y3qejuf" path="res://models/andrew/andrew_garfield.gltf" id="1_s7rs5"]
+
+[node name="andrew_garfield" instance=ExtResource("1_s7rs5")]
+
+[node name="andrew" parent="." index="0"]
+transform = Transform3D(2.15566, 0, 0, 0, 0, -2.15566, 0, 2.15566, 0, 0.105555, -0.0129771, -0.02022)
