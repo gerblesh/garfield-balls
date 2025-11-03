@@ -4,23 +4,22 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhqheqtuk75ma"
 path.s3tc="res://.godot/imported/head_baseColor.png-72a1dcf42906a71892add14874fa6842.s3tc.ctex"
-path.etc2="res://.godot/imported/head_baseColor.png-72a1dcf42906a71892add14874fa6842.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc", "etc2"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/garfield/textures/head_baseColor.png"
-dest_files=["res://.godot/imported/head_baseColor.png-72a1dcf42906a71892add14874fa6842.s3tc.ctex", "res://.godot/imported/head_baseColor.png-72a1dcf42906a71892add14874fa6842.etc2.ctex"]
+dest_files=["res://.godot/imported/head_baseColor.png-72a1dcf42906a71892add14874fa6842.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true

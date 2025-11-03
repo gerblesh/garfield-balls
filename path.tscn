@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://i6w12bbj2lnr"]
+
+[node name="Path3D" type="Path3D"]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Node"]
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+polygon = PackedVector2Array(-1, 0, -2.50453, 0.854313, -3, 3, -2.03271, 2.95735, -1.3, 1, -0.5, 0.3, 1.51418, 0.302668, 2, 1, 3.46287, 2.4855, 4.61101, 2.41717, 3.59859, 0.893759, 2.80487, -0.0589218)
+mode = 2
+path_node = NodePath("../..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+smooth_faces = true

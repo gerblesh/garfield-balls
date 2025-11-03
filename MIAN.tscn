@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dj2n8v21gdh6h"]
+[gd_scene load_steps=11 format=3 uid="uid://dj2n8v21gdh6h"]
 
-[ext_resource type="PackedScene" uid="uid://dikhx714e3jyx" path="res://ball.tscn" id="1_8rvh4"]
+[ext_resource type="Script" uid="uid://b7et2owwqcavt" path="res://game.gd" id="1_uc4c3"]
 [ext_resource type="Texture2D" uid="uid://d3w4qqsvaf4u1" path="res://icon.svg" id="3_2314g"]
+[ext_resource type="PackedScene" uid="uid://8cwch246pjap" path="res://course.tscn" id="4_uc4c3"]
+[ext_resource type="AudioStream" uid="uid://c1oip7c5bvhri" path="res://ncs.ogg" id="5_uc4c3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3h60y"]
 
@@ -22,20 +24,18 @@ albedo_texture = ExtResource("3_2314g")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bhcde"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
-[node name="Node3d" type="Node3D"]
+[node name="Game" type="Node3D"]
+script = ExtResource("1_uc4c3")
 
 [node name="DirectionalLight3d" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Ball" parent="." instance=ExtResource("1_8rvh4")]
-max_contacts_reported = 4
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_oer4l")
 
 [node name="MeshInstance3d" type="MeshInstance3D" parent="."]
-transform = Transform3D(17.8783, 0, 0, 0, 1, 0, 0, 0, 18.1381, 0, -1.47448, 0)
+transform = Transform3D(17.8783, 0, 0, 0, 1, 0, 0, 0, 18.1381, 0, -4.41612, 0)
 material_override = SubResource("StandardMaterial3D_cr5wk")
 mesh = SubResource("PlaneMesh_nv5yk")
 
@@ -45,3 +45,16 @@ collision_mask = 0
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="MeshInstance3d/StaticBody3d"]
 shape = SubResource("ConcavePolygonShape3D_bhcde")
+
+[node name="Course" parent="." instance=ExtResource("4_uc4c3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30.0531, 55.1759)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_uc4c3")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Timer"
+
+[node name="Timer" type="Timer" parent="Label"]

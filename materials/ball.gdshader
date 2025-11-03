@@ -1,5 +1,6 @@
 shader_type spatial;
-render_mode cull_front,unshaded;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+render_mode cull_front,unshaded, blend_premul_alpha;
 uniform float blur_amount;
 uniform vec4 rim_color: source_color;
 uniform float rim_width;

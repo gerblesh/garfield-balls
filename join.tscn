@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjbnodkk2wyhj"]
+
+[ext_resource type="Script" uid="uid://dv2rkq1yi3sac" path="res://join.gd" id="1_5rswr"]
+
+[node name="Join" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5rswr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -118.5
+offset_right = 95.0
+offset_bottom = 118.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Join"
+horizontal_alignment = 1
+
+[node name="Join" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Join Session Aggregator"
+
+[node name="IP" type="TextEdit" parent="VBoxContainer"]
+layout_mode = 2
+text = "localhost"
+placeholder_text = "enter your internet protocol address here"
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Host"
+horizontal_alignment = 1
+
+[node name="Host" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Host Game Instance"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Optoins"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Username Here"
+max_length = 15

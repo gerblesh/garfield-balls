@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://buj5spj1u0qd1"]
+
+[ext_resource type="Script" uid="uid://poxokmqetkcw" path="res://player_ui.gd" id="1_wx83m"]
+
+[node name="Player" type="HBoxContainer"]
+script = ExtResource("1_wx83m")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Player Name"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+text = "Remove"

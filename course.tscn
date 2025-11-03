@@ -1,0 +1,173 @@
+[gd_scene load_steps=10 format=3 uid="uid://8cwch246pjap"]
+
+[ext_resource type="PackedScene" uid="uid://i6w12bbj2lnr" path="res://path.tscn" id="1_a5owf"]
+[ext_resource type="Script" uid="uid://guk0v8000w2r" path="res://bouncy_shiz.gd" id="1_wu01y"]
+[ext_resource type="Script" uid="uid://bgwwo2me1h68v" path="res://death_area.gd" id="3_y17gl"]
+
+[sub_resource type="Curve3D" id="Curve3D_wu01y"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.0337486, -0.265768, 0.881304, 0, 0, 0, 0, 0, 0, 2.68567, -0.193636, -30.7049, 0, 0, 0, 0, 0, 0, 3.36305, 0.816238, -43.5439, 0, 0, 0, 0, 0, 0, 6.14334, -0.0521269, -53.4437, 0, 0, 0, 0, 0, 0, 4.0575, 2.54745, -60.055, 0, 0, 0, 0, 0, 0, 1.38035, 10.6265, -67.3949, 0, 0, 0, 0, 0, 0, 3.21255, 14.3673, -73.969),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="Curve3D" id="Curve3D_a5owf"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3.78182, -3.44656, -21.4135, 0, 0, 0, 0, 0, 0, 0.675758, 6.29769, 5.60187),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_trg40"]
+size = Vector3(12, 3, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trg40"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+albedo_color = Color(0, 1, 0, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_trg40"]
+size = Vector3(12, 3, 12)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_a5owf"]
+
+[node name="Course" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84131, 18.0238, -33.7664)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+size = Vector3(14.0044, 1, 58.9496)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.099, -31.2945, 119.875)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+size = Vector3(79.9199, 1, 58.9496)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 305.926, -18.8609, 119.875)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+size = Vector3(231.608, 25.8673, 58.9496)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D7"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -3.67523, 16.1929, 0.201767)
+operation = 2
+radius = 28.356
+height = 231.236
+sides = 30
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 389.705, -13.9647, 60.8435)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+size = Vector3(231.608, 25.8673, 58.9496)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D8"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -3.67523, 25.6219, 0.201767)
+operation = 2
+radius = 28.356
+height = 231.236
+sides = 30
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 458.438, -8.65323, 3.87007)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+size = Vector3(372.36, 25.8673, 58.9496)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D9"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -3.67523, 25.6219, 0.201767)
+operation = 2
+radius = 28.356
+height = 452.784
+sides = 30
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79626, 18.0238, -103.751)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+size = Vector3(1.76245, 1, 43.8182)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, -18.0746, 18.0238, -130.622)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+size = Vector3(1.76245, 1, 43.8182)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1672, -15.7299, 86.5942)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+size = Vector3(46.6561, 1, 66.7386)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D3"]
+transform = Transform3D(1.36894, 0, 0, 0, 1, 0, 0, 0, 1.36894, 21.1476, 10.8831, -29.7187)
+operation = 2
+radius = 20.0
+height = 23.7661
+sides = 30
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.69232, -0.721591, 0, 0.721591, 0.69232, -0.96868, 3.63659, 10.7597)
+use_collision = true
+collision_layer = 2
+collision_mask = 0
+size = Vector3(15.3604, 1, 35.3477)
+
+[node name="Path3D" parent="." instance=ExtResource("1_a5owf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 112.204, -26.2309, 115.265)
+curve = SubResource("Curve3D_wu01y")
+
+[node name="Path3D2" parent="." instance=ExtResource("1_a5owf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 186.665, -23.7004, 127.321)
+curve = SubResource("Curve3D_a5owf")
+
+[node name="BouncyShiz" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.6208, 31.8865)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_wu01y")
+jumpy = 60.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BouncyShiz"]
+shape = SubResource("BoxShape3D_trg40")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BouncyShiz"]
+material_override = SubResource("StandardMaterial3D_trg40")
+mesh = SubResource("BoxMesh_trg40")
+
+[node name="BouncyShiz2" type="Area3D" parent="."]
+transform = Transform3D(4.58152, 0, 0, 0, 1, 0, 0, 0, 6.11366, 690.483, -30.8802, 8.3138)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_wu01y")
+jumpy = 100.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BouncyShiz2"]
+transform = Transform3D(1, 0, 0, 0, 0.999998, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_trg40")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BouncyShiz2"]
+material_override = SubResource("StandardMaterial3D_trg40")
+mesh = SubResource("BoxMesh_trg40")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50.3592, 0)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("3_y17gl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.82259, 0)
+shape = SubResource("WorldBoundaryShape3D_a5owf")

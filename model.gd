@@ -1,24 +1,19 @@
 extends Node3D
-var models: Array[PackedScene] = [
-	preload("res://models/garfield/garf.tscn"),
-	preload("res://models/andrew/andrew.tscn")
-]
+var models: Dictionary[Ball.C, PackedScene] = {
+	Ball.C.GARFIELD: preload("res://models/garfield/garf.tscn"),
+	Ball.C.ANDRE: preload("res://models/andrew/andrew.tscn"),
+	Ball.C.TELETUBBY: preload("res://models/teletuffy.glb")
+}
 
 var current_character: Node3D
+var current_char: Ball.C = Ball.C.NULL
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	set_character(0)
-
-func set_character(i: int):
+func set_character(i: Ball.C) -> void:
+	if models.get(i) == null:
+		return
 	if is_instance_valid(current_character):
 		current_character.queue_free()
-	current_character = models[i].instantiate()
+	var s := models[i]
+	current_character = s.instantiate()
+	current_char = i
 	add_child(current_character)
-
-func _unhandled_input(event):
-	if Input.is_action_just_pressed("char1"):
-		set_character(0)
-	if Input.is_action_just_pressed("char2"):
-		set_character(1)
-	
