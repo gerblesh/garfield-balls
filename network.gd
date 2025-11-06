@@ -8,6 +8,9 @@ signal server_disconnected
 signal all_players_loaded
 signal load_progress(done: int, total: int)
 signal player_info_changed(id: int, new_info: Dictionary)
+signal player_list_changed
+
+const MAX_PLAYERS: int = 10
 
 @export var GAMESTATE: STATES
 
@@ -41,7 +44,7 @@ func _ready() -> void:
 
 func start_server() -> void:
 	peer = ENetMultiplayerPeer.new()
-	var err := peer.create_server(PORT)
+	var err := peer.create_server(PORT, MAX_PLAYERS)
 	if err != OK:
 		push_error(error_string(err))
 		assert(false)
@@ -49,6 +52,7 @@ func start_server() -> void:
 
 	players[1] = player_info
 	player_connected.emit(1, player_info)
+	player_list_changed.emit()
 
 func start_client(ip: String) -> void:
 	peer = ENetMultiplayerPeer.new()
@@ -79,18 +83,21 @@ func _register_player(info: Dictionary) -> void:
 	var new_player_id = multiplayer.get_remote_sender_id()
 	players[new_player_id] = info
 	player_connected.emit(new_player_id, info)
+	player_list_changed.emit()
 
 func _on_player_disconnected(id: int) -> void:
 	players.erase(id)
 	player_disconnected.emit(id)
 	if id == multiplayer.multiplayer_peer.get_unique_id():
 		get_tree().change_scene_to_file("res://join.tscn")
+	player_list_changed.emit()
 
 
 func remove_multiplayer_peer():
 	multiplayer.multiplayer_peer = OfflineMultiplayerPeer.new()
 	players.clear()
 	get_tree().change_scene_to_file("res://join.tscn")
+	player_list_changed.emit()
 
 
 func _on_connected_ok() -> void:
@@ -132,3 +139,4 @@ func change_player_info(new_info: Dictionary) -> void:
 	players[id] = new_info
 	player_info_changed.emit(id, new_info)
 	print(players)
+	player_list_changed.emit()

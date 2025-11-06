@@ -14,7 +14,7 @@ var accel : float = 1.0
 var up_direction := Vector3.UP
 
 
-const JUMP_GRACE = 0.2
+const JUMP_GRACE := 0.2
 var falling := JUMP_GRACE
 var auth: bool = false
 
@@ -30,7 +30,7 @@ var sens : float = 0.06
 #func _enter_tree() -> void:
 	#set_multiplayer_authority(name.to_int())
 
-func _ready():
+func _ready() -> void:
 	if not is_multiplayer_authority():
 		auth = false
 		set_physics_process(false)
@@ -67,16 +67,13 @@ func _physics_process(_delta: float) -> void:
 		falling = 0
 		var norm := floor_cast.get_collision_normal(0) # I guess index zero is the one idfk atp
 		# ok so stupid idea, we align the acceleration to the normal of the plane!!
-		var new_accel = accel
-		if direction.length() < 1:
-			linear_damp = 4
-		elif linear_velocity.length() > 3:
-			linear_damp = 0.7
-			new_accel = 0.8
-		else:
-			linear_damp = 1.4
-			new_accel = 1.2
-		var s : Vector3= direction.slide(norm).normalized() * new_accel
+		var new_accel := accel
+		var weight := minf(linear_velocity.length() / 5, 1.0)
+		
+		linear_damp = lerp(1.4, 0.7, weight * weight)
+		new_accel = lerp(1.2,0.9, weight * weight)
+
+		var s: Vector3 = direction.slide(norm).normalized() * new_accel
 		apply_central_impulse(s)
 		# last_grounded_pos = global_position
 	else:

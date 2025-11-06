@@ -147,6 +147,20 @@ shape = SubResource("BoxShape3D_trg40")
 material_override = SubResource("StandardMaterial3D_trg40")
 mesh = SubResource("BoxMesh_trg40")
 
+[node name="BouncyShiz3" type="Area3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, 0, -3.82137e-15, 4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 1.16811, 18.4646, -54.5943)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_wu01y")
+jumpy = 60.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BouncyShiz3"]
+shape = SubResource("BoxShape3D_trg40")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BouncyShiz3"]
+material_override = SubResource("StandardMaterial3D_trg40")
+mesh = SubResource("BoxMesh_trg40")
+
 [node name="BouncyShiz2" type="Area3D" parent="."]
 transform = Transform3D(4.58152, 0, 0, 0, 1, 0, 0, 0, 6.11366, 690.483, -30.8802, 8.3138)
 collision_layer = 0

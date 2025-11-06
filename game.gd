@@ -16,7 +16,7 @@ func start_game():
 @rpc("authority", "reliable", "call_local")
 func spawn_player(id: int):
 	var player: Ball = player_scene.instantiate()
-	player.current_char = Ball.C.GARFIELD
+	player.current_char = Network.players[id].char
 	player.name = str(id)
 	add_child.call_deferred(player, true)
 	# When the player enters the tree, then set the multiplayer authority because fuck you I guess
