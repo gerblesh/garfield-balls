@@ -7,6 +7,7 @@ extends Control
 @onready var host: Button = $VBoxContainer/Host
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if Network.player_info.name == "":
 		join.disabled = true
 		host.disabled = true
@@ -19,12 +20,12 @@ func _ready() -> void:
 
 func _on_join_pressed() -> void:
 	hide()
-	get_tree().change_scene_to_file("res://lobby.tscn")
+	get_tree().change_scene_to_file("res://network/lobby.tscn")
 	Network.start_client(ip.text)
 
 func _on_host_pressed() -> void:
 	hide()
-	get_tree().change_scene_to_file("res://lobby.tscn")
+	get_tree().change_scene_to_file("res://network/lobby.tscn")
 	Network.start_server()
 
 func name_submitted(txt: String) -> void:

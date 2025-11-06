@@ -6,6 +6,8 @@ enum C {
 		GARFIELD,
 		ANDRE,
 		TELETUBBY,
+		SUSSY,
+		OG_GARFIELD,
 }
 
 var accel : float = 1.0
@@ -17,11 +19,16 @@ var up_direction := Vector3.UP
 const JUMP_GRACE := 0.2
 var falling := JUMP_GRACE
 var auth: bool = false
+var display_name: String
 
+@onready var name_label: Label3D = $Fixed/Label3D
 @onready var floor_cast: ShapeCast3D = $ShapeCast3D
 @onready var y_pivot : Node3D = $xPivot
 @onready var x_pivot : Node3D = $xPivot/yPivot
 @onready var camera: Camera3D = $xPivot/yPivot/SpringArm3d/Camera3d
+@onready var model: Node3D = $Model
+@onready var fixed: Node3D = $Fixed
+
 var sens : float = 0.06
 
 @onready var last_grounded_pos := global_position
@@ -31,6 +38,8 @@ var sens : float = 0.06
 	#set_multiplayer_authority(name.to_int())
 
 func _ready() -> void:
+	name_label.text = display_name
+	fixed.top_level = true
 	if not is_multiplayer_authority():
 		auth = false
 		set_physics_process(false)
@@ -50,6 +59,8 @@ func _ready() -> void:
 
 func reset_pos() -> void:
 	global_position = last_grounded_pos
+	linear_velocity = Vector3.ZERO
+	angular_velocity = Vector3.ZERO
 
 # Player disconnected
 func _on_disconnect(id: int) -> void:
@@ -97,8 +108,10 @@ func _physics_process(_delta: float) -> void:
 	y_pivot.global_position = global_position
 
 func _process(_delta: float) -> void:
-	if $Model.current_char != current_char:
-		$Model.set_character(current_char)
+	if model.current_char != current_char:
+		model.set_character(current_char)
+	fixed.global_position = global_position
+	
 
 # camera rotation
 func _input(event: InputEvent) -> void:

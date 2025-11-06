@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://p11i62toh0qs"]
+
+[ext_resource type="PackedScene" uid="uid://c3umwwd43fx7p" path="res://models/garfield_og/james_garfield_bronze_sculpture.glb" id="1_thh88"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_thh88")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)

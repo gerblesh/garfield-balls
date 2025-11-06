@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://43sl7ud1g4i3"]
+
+[ext_resource type="PackedScene" uid="uid://civfoy13dp4g4" path="res://models/teletuffy/teletuffy.glb" id="1_a3tv6"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_a3tv6")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.545663, 0)

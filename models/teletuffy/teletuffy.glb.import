@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c3umwwd43fx7p"
-path="res://.godot/imported/james_garfield_bronze_sculpture.glb-8bb50f5b669644038babea6a1623e13d.scn"
+uid="uid://civfoy13dp4g4"
+path="res://.godot/imported/teletuffy.glb-1ad7509784219b60fe8c4a48e69d8481.scn"
 
 [deps]
 
-source_file="res://models/james_garfield_bronze_sculpture.glb"
-dest_files=["res://.godot/imported/james_garfield_bronze_sculpture.glb-8bb50f5b669644038babea6a1623e13d.scn"]
+source_file="res://models/teletuffy/teletuffy.glb"
+dest_files=["res://.godot/imported/teletuffy.glb-1ad7509784219b60fe8c4a48e69d8481.scn"]
 
 [params]
 

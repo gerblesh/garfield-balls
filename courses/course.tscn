@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://8cwch246pjap"]
 
-[ext_resource type="PackedScene" uid="uid://i6w12bbj2lnr" path="res://path.tscn" id="1_a5owf"]
-[ext_resource type="Script" uid="uid://guk0v8000w2r" path="res://bouncy_shiz.gd" id="1_wu01y"]
-[ext_resource type="Script" uid="uid://bgwwo2me1h68v" path="res://death_area.gd" id="3_y17gl"]
+[ext_resource type="PackedScene" uid="uid://i6w12bbj2lnr" path="res://obstacle/path.tscn" id="1_a5owf"]
+[ext_resource type="Script" uid="uid://guk0v8000w2r" path="res://obstacle/bouncy_shiz.gd" id="1_wu01y"]
+[ext_resource type="Script" uid="uid://bgwwo2me1h68v" path="res://obstacle/death_area.gd" id="3_y17gl"]
 
 [sub_resource type="Curve3D" id="Curve3D_wu01y"]
 _data = {

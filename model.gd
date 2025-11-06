@@ -2,7 +2,9 @@ extends Node3D
 var models: Dictionary[Ball.C, PackedScene] = {
 	Ball.C.GARFIELD: preload("res://models/garfield/garf.tscn"),
 	Ball.C.ANDRE: preload("res://models/andrew/andrew.tscn"),
-	Ball.C.TELETUBBY: preload("res://models/teletuffy.glb")
+	Ball.C.TELETUBBY: preload("res://models/teletuffy/teletuffy.tscn"),
+	Ball.C.SUSSY: preload("res://models/sussy/sussy.tscn"),
+	Ball.C.OG_GARFIELD: preload("res://models/garfield_og/garfield_og.tscn"),
 }
 
 var current_character: Node3D

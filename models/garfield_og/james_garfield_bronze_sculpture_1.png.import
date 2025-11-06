@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dr68ow0ownv88"
-path.s3tc="res://.godot/imported/james_garfield_bronze_sculpture_1.png-19a367cfb9d5366d1dc85704fa1a232e.s3tc.ctex"
+path.s3tc="res://.godot/imported/james_garfield_bronze_sculpture_1.png-183b79cc2bad12abb69ac7533c949c5b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://models/james_garfield_bronze_sculpture_1.png"
-dest_files=["res://.godot/imported/james_garfield_bronze_sculpture_1.png-19a367cfb9d5366d1dc85704fa1a232e.s3tc.ctex"]
+source_file="res://models/garfield_og/james_garfield_bronze_sculpture_1.png"
+dest_files=["res://.godot/imported/james_garfield_bronze_sculpture_1.png-183b79cc2bad12abb69ac7533c949c5b.s3tc.ctex"]
 
 [params]
 
