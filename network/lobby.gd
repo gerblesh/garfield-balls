@@ -109,10 +109,6 @@ func _on_player_list_changed() -> void:
 		return a.laps >= b.laps
 	)
 	for p in sorted:
-		#var p: Dictionary = Network.players[k]
-		# if k == Network.multiplayer.get_unique_id():
-		# 	continue
-
 		var name_label := Label.new()
 		name_label.text = p.name
 		name_col.add_child(name_label)

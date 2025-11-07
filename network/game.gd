@@ -10,6 +10,7 @@ func _ready():
 
 # Called only on the server.
 func start_game():
+	print(Network.players)
 	for id in Network.players.keys():
 		spawn_player.rpc(id)
 
@@ -19,7 +20,8 @@ func spawn_player(id: int):
 	player.current_char = Network.players[id].char
 	player.name = str(id)
 	player.display_name = Network.players[id].name
+	# player.set_multiplayer_authority(id)
 	add_child.call_deferred(player, true)
 	# When the player enters the tree, then set the multiplayer authority because fuck you I guess
-	player.tree_entered.connect(func():
-			player.set_multiplayer_authority(id))
+	# player.tree_entered.connect(func():
+	# 		player.set_multiplayer_authority(id))

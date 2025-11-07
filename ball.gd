@@ -33,23 +33,24 @@ var sens : float = 0.06
 
 @onready var last_grounded_pos := global_position
 
-
-#func _enter_tree() -> void:
-	#set_multiplayer_authority(name.to_int())
-
 func _ready() -> void:
+	set_multiplayer_authority(name.to_int())
+
 	name_label.text = display_name
 	fixed.top_level = true
+	# auth = name.to_int() == Network.multiplayer.get_unique_id()
 	if not is_multiplayer_authority():
 		auth = false
 		set_physics_process(false)
 		set_process_input(false)
 		camera.current = false
-		floor_cast.top_level = true
+		camera.queue_free()
+		floor_cast.top_level = false
 		floor_cast.enabled = false
 		Network.player_disconnected.connect(_on_disconnect)
 		return
 
+	camera.current = true
 	auth = true
 	set_collision_layer_value(3, true) # skibidi now the player is on the jump pad
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -111,7 +112,7 @@ func _process(_delta: float) -> void:
 	if model.current_char != current_char:
 		model.set_character(current_char)
 	fixed.global_position = global_position
-	
+	#set_multiplayer_authority(name.to_int())
 
 # camera rotation
 func _input(event: InputEvent) -> void:
